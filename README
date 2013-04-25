@@ -1,0 +1,25 @@
+- Contacts in a database can be associated with other contacts which we call co-branding. Just for background, contacts that receive correspondence from our users will display that recipient contact's cobranded contact info in the email or letter signature.
+
+- Loans in the database are associated with a customer which is a contact and an agent which is also a contact.
+
+ 
+
+- Model a Contact with first name, last name, a contact type, and a reference to another Contact to be cobranded with.
+
+- Contacts are not required to have a cobrand.
+
+- Valid contact types are 'Client', 'Prospect', and 'Referral Partner'.
+
+- Create the accompanying controller and form views to do basic CRUD for contact data. Scaffolding views is fine, modify forms where necessary.
+
+- Include a form field for selecting a Cobrand Contact. Only contacts with the contact type of Referral Partner can be a valid choice for selecting a contact for cobranding.
+
+- Contacts should have a named scope or ActiveRecord query to return (whichever is best practice) for 'Lonely Agents' to return referral partner contacts that are not cobranded with any other contact.
+
+ 
+
+- Model a Loan with amount, address, customer, and an agent. Agents are just Contacts of Referral Partner type. Customers are any contact.
+
+- Create basic CRUD for Loans. Again, scaffolding the views is fine if it's helpful.
+
+- When updating or creating a loan and the customer's (contact) cobranded contact is not the same as the agent specified for the loan, update the customer contact's cobrand to be agent contact for the loan
