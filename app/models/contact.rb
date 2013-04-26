@@ -1,3 +1,6 @@
 class Contact < ActiveRecord::Base
-  # attr_accessible :title, :body
+  validates_presence_of :firstname
+  validates_presence_of :lastname
+
+
 end
