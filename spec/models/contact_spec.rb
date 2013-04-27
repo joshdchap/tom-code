@@ -50,8 +50,8 @@ describe Contact do
     end
 
     context "lonely agent scope" do
-      it "returns lonely agents" do
-        Contact.lonely_agents.should == [@chapman]
+      it "should include chapman as a lonely agent" do
+        Contact.lonely_agents.should include @chapman
       end
     end
   end
