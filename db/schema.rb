@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425233656) do
+ActiveRecord::Schema.define(:version => 20130427000124) do
 
   create_table "contacts", :force => true do |t|
     t.string   "firstname"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20130425233656) do
     t.integer  "cobrand_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "loans", :force => true do |t|
+    t.float    "amount"
+    t.text     "address"
+    t.integer  "customer_id"
+    t.integer  "agent_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
