@@ -14,8 +14,8 @@ describe Contact do
   end
 
   it "is invalid with an improper cobrand" do
-    client = FactoryGirl.create(:contact, contact_type: "Client")
-    client2 = FactoryGirl.build(:contact, contact_type: "Client", 
+    client = FactoryGirl.create(:contact, contact_type: Contact::CLIENT)
+    client2 = FactoryGirl.build(:contact, contact_type: Contact::CLIENT, 
                  cobrand: client).should_not be_valid
   end
 
@@ -45,7 +45,7 @@ describe Contact do
       end
 
       it "finds the cobrand contacts properly" do
-        @miller.cobrand_contacts.should == [@rogers]
+        @miller.cobrand_contacts.should include @rogers
       end
     end
 
