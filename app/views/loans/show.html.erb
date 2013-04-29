@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<h1>Loan For <%= @loan.customer.name %> </h1>
+
+<p>
+  <strong>Amount</strong><br/>
+  <%= number_to_currency(@loan.amount) %>
+</p>
+<p>
+  <strong>Customer Address</strong><br/>
+  <%= @loan.address %>
+</p>
+<p>
+  <strong>Loan Agent</strong><br/>
+  <%= @loan.agent.blank? ? "None Specified" : @loan.agent.name %>
+</p>
+<%= link_to 'Edit', edit_loan_path(@loan) %> |
+<%= link_to 'Back', loans_path %>

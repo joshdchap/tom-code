@@ -1,0 +1,36 @@
+<%= form_for(@loan) do |f| %>
+  <% if @loan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loan.errors.count, "error") %> prohibited this loan from being saved:</h2>
+
+      <ul>
+      <% @loan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :amount, "Loan Amount:" %>
+    <%= f.text_field :amount %>
+  </p>
+  <p>
+    <%= f.label :agent_id, "Agent:" %>
+    <%= f.select :agent_id, @valid_agents.map{|a| [a.name, a.id]} %>
+  </p>
+  <p>
+    <%= f.label :customer_id, "Client:" %>
+    <%= f.select :customer_id, Contact.all.map{|c| [c.name, c.id]} %>
+  </p>
+  <p>
+    <%= f.label :address, "Client Address:" %>
+    <%= f.text_area :address, :rows => 4 %>
+  </p>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

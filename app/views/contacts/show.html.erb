@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @contact.name %></h1>
+<p>
+  <strong>Contact Type:</strong> 
+  <%= @contact.contact_type %>
+</p>
+<p>
+  <strong>Cobrand Agent:</strong>
+  <%= @contact.cobrand.blank? ? "None Assigned" : @contact.cobrand.name %>
+</p>
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>
