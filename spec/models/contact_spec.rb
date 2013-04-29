@@ -27,6 +27,9 @@ describe Contact do
     FactoryGirl.build(:contact).name.should == "Josh Chapman"
   end
 
+  it { should have_many(:servicing_loans)}
+  it { should have_many(:consuming_loans)}
+
   describe "cobrand association" do
 
     before :each do

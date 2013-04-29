@@ -13,4 +13,8 @@ describe Loan do
 
     FactoryGirl.build(:loan, agent: @agent).should_not be_valid
   end 
+
+  it "switches cobrand to loan agent" do
+  end
+  
 end
